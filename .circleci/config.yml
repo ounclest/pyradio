@@ -149,18 +149,10 @@ workflows:
           <<: *build_job_template
       - build-3.6:
           <<: *build_job_template
-      - test-notebooks:
-          
-            - build-2.7
-            - build-3.4
-            - build-3.5
-            - build-3.6
+      
       - deploy:
-          
-            - build-2.7
             - build-3.4
-            - build-3.5
-            - build-3.6
+            - build-2.7
           filters:
             branches:
               ignore:
